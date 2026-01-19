@@ -1,12 +1,8 @@
 from django.shortcuts import render
 
-# My views :
 
-from django.http import HttpResponse
-
-#function that returns a response/page
 def home(request):
-    return HttpResponse("Hello Vy 🐍, Welcome to Django!")
+    return render(request, 'pages/home.html')
 
 def about(request):
-    return HttpResponse("This is the About page ✅")
+    return render(request, 'pages/about.html')
