@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home</title>
-    </head>
-    <body>
-        <h1>Welcome Vy👋</h1>
-        <p>This is my first Django template page.</p>
+{% extends 'pages/base.html' %}
 
-        <p><b>Day 4 completed</b></p>
+{% block title %}Home{% endblock %}
 
-        <a href="/about/">Go to about</a>
-    </body>
-</html>
+{% block content %}
+    <h1>Welcome Vy 👋</h1>
+    <p>This is my Home page using template inheritance ✅</p>
+{% endblock%}
