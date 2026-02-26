@@ -6,5 +6,29 @@
     <h1> Welcome {{name}} 👋</h1>
     <p> Role : {{role}}</p>
     <P> Day {{day}} of Django learning 🐍</P>
-    <p> Status : {{status}}</p>
+    
+
+    {% if is_learning%}
+        <p>🔥 You are learning Django seriously!</p>
+    {% else %}
+        <p>❌ You are not learning today.</p>
+    {% endif %}
+
+
+    <h3>Skills :</h3>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor%}
+    </ul>
+
+    <h3>Goals :</h3>
+    <ul>
+        {% for goal in goals%}
+            <li>{{goal}}</li>
+        {% endfor %}
+    </ul>
+
+
+ 
 {% endblock%}
