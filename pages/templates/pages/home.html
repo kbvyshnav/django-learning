@@ -3,32 +3,20 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1> Welcome {{name}} 👋</h1>
-    <p> Role : {{role}}</p>
-    <P> Day {{day}} of Django learning 🐍</P>
-    
+    <h1>Profiles List</h1>
 
-    {% if is_learning%}
-        <p>🔥 You are learning Django seriously!</p>
+    {% if profiles %}
+        <ul>
+            {% for profile in profiles %}
+                <li>
+                    <b>Name :</b> {{ profile.name }} |
+                    <b>Role :</b> {{ profile.role }} |
+                    <b>Active :</b> {{ profile.is_active }}
+                </li>
+            {% endfor %}
+        </ul>
     {% else %}
-        <p>❌ You are not learning today.</p>
+        <p>No profiles found.</p>
     {% endif %}
 
-
-    <h3>Skills :</h3>
-    <ul>
-        {% for skill in skills %}
-            <li>{{ skill }}</li>
-        {% endfor%}
-    </ul>
-
-    <h3>Goals :</h3>
-    <ul>
-        {% for goal in goals%}
-            <li>{{goal}}</li>
-        {% endfor %}
-    </ul>
-
-
- 
 {% endblock%}

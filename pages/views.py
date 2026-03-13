@@ -1,15 +1,10 @@
 from django.shortcuts import render
-
+from .models import Profile
 
 def home(request):
+    profiles = Profile.objects.all()   # fetch all rows
     context = {
-        "name" : "Vy",
-        "role" : "Python Developer",
-        "day" : 7,
-        "status" : "Learning Django consistently 💪",
-        "is_learning" : True,
-        "skills" : ["Python", "Django", "SQL", "Git", "HTML", "CSS"],
-        "goals": ["Get Django job", "Build projects", "Crack interviews"]
+        "profiles" : profiles
     }
     return render(request, 'pages/home.html' , context)
 
