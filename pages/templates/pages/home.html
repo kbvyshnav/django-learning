@@ -13,10 +13,16 @@
                     <b>Role :</b> {{ profile.role }} |
                     <b>Active :</b> {{ profile.is_active }}
                 </li>
+                <li>
+                    <b>{{ profile.name }}</b> - {{ profile.role }}
+
+                    <a href="/update-profile/{{ profile.id }}/">Edit</a>
+                </li>
             {% endfor %}
         </ul>
     {% else %}
         <p>No profiles found.</p>
     {% endif %}
+
 
 {% endblock%}
