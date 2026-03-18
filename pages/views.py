@@ -47,3 +47,8 @@ def update_profile(request, id):
 
     return render(request, 'pages/add_profile.html', {'form': form})
 
+########### Delete Profile form func : #################################
+def delete_profile(request, id):
+    profile = get_object_or_404(Profile, id=id)
+    profile.delete()
+    return redirect('/')
