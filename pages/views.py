@@ -26,7 +26,7 @@ def add_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile added successfully ✅")
-            return redirect('/')
+            return redirect('home')
 
     else:
         form = ProfileForm()
@@ -43,7 +43,7 @@ def update_profile(request, id):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile updated successfully ✏️")
-            return redirect('/')
+            return redirect('home')
 
     else:
         form = ProfileForm(instance=profile)
@@ -55,4 +55,4 @@ def delete_profile(request, id):
     profile = get_object_or_404(Profile, id=id)
     profile.delete()
     messages.success(request, "Profile deleted successfully 🗑️")
-    return redirect('/')
+    return redirect('home')

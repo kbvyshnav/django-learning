@@ -16,8 +16,8 @@
                 <li>
                     <b>{{ profile.name }}</b> - {{ profile.role }}
 
-                    <a href="/update-profile/{{ profile.id }}/">Edit</a>
-                    <a href="/delete-profile/{{ profile.id }}" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                    <a href="{% url 'update_profile' profile.id %}">Edit</a>
+                    <a href="{% url 'delete_profile' profile.id %}" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
                 </li>
             {% endfor %}
         </ul>
